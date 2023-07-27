@@ -1,0 +1,78 @@
+@mixin button-next {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  font-weight: $medium;
+  width: 7.6875rem;
+  height: 3rem;
+  border-radius: 8px;
+  border: none;
+  background-color: $denim;
+  color: $white;
+  position: absolute;
+  bottom: 2rem;
+  right: 0;
+  cursor: pointer;
+
+  a {
+    text-decoration: none;
+
+    &:visited {
+      color: $white;
+    }
+  }
+
+  &:hover {
+    background-color: $button-next-hover;
+    transition: 0.1s;
+  }
+}
+
+@mixin button-footer-next {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  font-weight: $medium;
+  width: 7.6875rem;
+  height: 3rem;
+  border-radius: 8px;
+  border: none;
+  background-color: $denim;
+  color: $white;
+  cursor: pointer;
+
+  a {
+    text-decoration: none;
+
+    &:visited {
+      color: $white;
+    }
+  }
+
+  &:hover {
+    background-color: $button-next-hover;
+    transition: 0.1s;
+  }
+}
+
+@mixin button-back {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  font-weight: $medium;
+  border: none;
+  color: $gray;
+  background-color: $white;
+
+  cursor: pointer;
+
+  a {
+    text-decoration: none;
+
+    &:visited {
+      color: $gray;
+    }
+
+    &:hover {
+      color: $denim;
+      transition: 0.1s;
+    }
+  }
+}

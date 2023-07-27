@@ -1,0 +1,562 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background-color: hsl(218, 100%, 97%);
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  color: hsl(213, 96%, 18%);
+}
+
+.main-wrapper {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 58.75rem;
+  height: 37.5rem;
+  border-radius: 15px;
+  background-color: hsl(0, 0%, 100%);
+  display: grid;
+  grid-template-columns: 17.125rem 41.625rem;
+  align-items: center;
+  justify-items: center;
+  padding: 0 15px;
+}
+
+nav {
+  width: 17.125rem;
+  height: 35.5625rem;
+  background-image: url("/assets/bg-sidebar-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+nav ul {
+  margin-left: 2rem;
+  margin-top: 2.5rem;
+}
+nav ul .active .list-number {
+  color: hsl(213, 96%, 18%);
+  background-color: hsl(206, 94%, 87%);
+  border: none;
+}
+nav ul a {
+  text-decoration: none;
+}
+nav ul a.active {
+  text-decoration: none;
+}
+nav li {
+  text-transform: uppercase;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+nav li .list-number {
+  color: hsl(0, 0%, 100%);
+  font-size: 0.875rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid hsl(0, 0%, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+nav li .list-right {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+nav li .list-right .step-number {
+  color: hsl(228, 100%, 83%);
+  font-size: 0.75rem;
+}
+nav li .list-right .step-name {
+  color: hsl(0, 0%, 100%);
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.page {
+  width: 28.125rem;
+  height: 100%;
+  padding-top: 3.5rem;
+  position: absolute;
+  right: 6.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-header p {
+  font-size: 1rem;
+  line-height: 1.5625rem;
+  color: hsl(231, 11%, 63%);
+  margin-top: 0.6875rem;
+}
+
+.info-page {
+  align-items: center;
+}
+
+#info-form {
+  margin-top: 2.1875rem;
+}
+#info-form label {
+  font-size: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+#info-form input {
+  width: 28.125rem;
+  height: 3rem;
+  border-radius: 8px;
+  border: 1px solid hsl(231, 23%, 87%);
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  font-weight: 500;
+}
+#info-form input::-moz-placeholder {
+  font-family: "Ubuntu", sans-serif;
+  color: hsl(231, 11%, 63%);
+}
+#info-form input::placeholder {
+  font-family: "Ubuntu", sans-serif;
+  color: hsl(231, 11%, 63%);
+}
+#info-form input:focus {
+  outline: 1px solid hsl(243, 100%, 62%);
+}
+#info-form .next-step {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 7.6875rem;
+  height: 3rem;
+  border-radius: 8px;
+  border: none;
+  background-color: hsl(213, 96%, 18%);
+  color: hsl(0, 0%, 100%);
+  position: absolute;
+  bottom: 2rem;
+  right: 0;
+  cursor: pointer;
+  margin-top: 5.75rem;
+  align-self: flex-end;
+}
+#info-form .next-step a {
+  text-decoration: none;
+}
+#info-form .next-step a:visited {
+  color: hsl(0, 0%, 100%);
+}
+#info-form .next-step:hover {
+  background-color: hsl(213, 72%, 31%);
+  transition: 0.1s;
+}
+#info-form .error-message {
+  position: absolute;
+  right: 0;
+  color: hsl(354, 84%, 57%);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+#info-form input:has(~ .error-message) {
+  outline: 1px solid hsl(354, 84%, 57%);
+}
+#info-form .error-message + input {
+  outline: 1px solid hsl(354, 84%, 57%);
+}
+#info-form input::-webkit-outer-spin-button,
+#info-form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#plan-form {
+  margin-top: 2.1875rem;
+}
+#plan-form .plan-selection {
+  display: flex;
+  justify-content: space-between;
+}
+#plan-form .plan-selection-label {
+  width: 8.625rem;
+  height: 10rem;
+}
+#plan-form .plan-selection-label .plan-input {
+  display: none;
+}
+#plan-form .plan-selection-label .plan-label-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 1.25rem 1rem;
+  border: 1px solid hsl(231, 23%, 87%);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+#plan-form .plan-selection-label .plan-label-wrapper:hover {
+  border: 1px solid hsl(243, 100%, 62%);
+  transition: 0.1s;
+}
+#plan-form .plan-selection-label .plan-label-wrapper-yearly {
+  height: 11.4375rem;
+}
+#plan-form .plan-selection-label .plan-label-wrapper-bottom {
+  display: flex;
+  flex-direction: column;
+}
+#plan-form .plan-selection-label .plan-label-wrapper-bottom .plan-name {
+  font-weight: 500;
+}
+#plan-form .plan-selection-label .plan-label-wrapper-bottom .plan-price {
+  font-size: 0.875rem;
+  color: hsl(231, 11%, 63%);
+  margin-top: 0.5rem;
+}
+#plan-form .plan-selection-label .plan-label-wrapper-bottom-yearly .plan-discount {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+#plan-form input[name=plan]:checked + .plan-label-wrapper {
+  background-color: hsl(231, 100%, 99%);
+  border: 1px solid hsl(243, 100%, 62%);
+  transition: 0.1s;
+}
+#plan-form .frequency-wrapper {
+  width: 100%;
+  height: 3rem;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(231, 100%, 99%);
+  border-radius: 8px;
+}
+#plan-form .frequency-wrapper .input-slider {
+  background-color: hsl(213, 96%, 18%);
+  width: 2.375rem;
+  height: 1.25rem;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1.5rem;
+  cursor: pointer;
+}
+#plan-form .frequency-wrapper .frequency-label {
+  font-weight: 700;
+  color: hsl(231, 11%, 63%);
+}
+#plan-form .frequency-active-monthly #monthly-label {
+  color: hsl(213, 96%, 18%);
+  transition: 0.1s;
+}
+#plan-form .frequency-active-monthly .slider-left {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: hsl(0, 0%, 100%);
+  transform: translate(-70%, 0);
+  transition: 0.2s ease-out;
+}
+#plan-form .frequency-active-yearly {
+  margin-top: 3rem;
+}
+#plan-form .frequency-active-yearly #yearly-label {
+  color: hsl(213, 96%, 18%);
+  color: hsl(213, 96%, 18%);
+}
+#plan-form .frequency-active-yearly .slider-left {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: hsl(0, 0%, 100%);
+  transform: translate(70%, 0);
+  transition: 0.2s ease-out;
+}
+
+.button-footer {
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.button-footer .next-step {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 7.6875rem;
+  height: 3rem;
+  border-radius: 8px;
+  border: none;
+  background-color: hsl(213, 96%, 18%);
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+.button-footer .next-step a {
+  text-decoration: none;
+}
+.button-footer .next-step a:visited {
+  color: hsl(0, 0%, 100%);
+}
+.button-footer .next-step:hover {
+  background-color: hsl(213, 72%, 31%);
+  transition: 0.1s;
+}
+.button-footer .go-back {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  color: hsl(231, 11%, 63%);
+  background-color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+.button-footer .go-back a {
+  text-decoration: none;
+}
+.button-footer .go-back a:visited {
+  color: hsl(231, 11%, 63%);
+}
+.button-footer .go-back a:hover {
+  color: hsl(213, 96%, 18%);
+  transition: 0.1s;
+}
+
+.button-footer-yearly {
+  margin-top: 6.25rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.button-footer-yearly .next-step {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 7.6875rem;
+  height: 3rem;
+  border-radius: 8px;
+  border: none;
+  background-color: hsl(213, 96%, 18%);
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+.button-footer-yearly .next-step a {
+  text-decoration: none;
+}
+.button-footer-yearly .next-step a:visited {
+  color: hsl(0, 0%, 100%);
+}
+.button-footer-yearly .next-step:hover {
+  background-color: hsl(213, 72%, 31%);
+  transition: 0.1s;
+}
+.button-footer-yearly .go-back {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  color: hsl(231, 11%, 63%);
+  background-color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+.button-footer-yearly .go-back a {
+  text-decoration: none;
+}
+.button-footer-yearly .go-back a:visited {
+  color: hsl(231, 11%, 63%);
+}
+.button-footer-yearly .go-back a:hover {
+  color: hsl(213, 96%, 18%);
+  transition: 0.1s;
+}
+
+#addon-form {
+  margin-top: 2.1875rem;
+}
+#addon-form .addon-label {
+  width: 100%;
+  height: 5.0625rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid hsl(231, 23%, 87%);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+#addon-form .addon-label input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+#addon-form .addon-label .checkmark {
+  position: absolute;
+  left: 1.5rem;
+  height: 1.25rem;
+  width: 1.25rem;
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 5px;
+  cursor: pointer;
+}
+#addon-form .addon-label .checkmark:after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 4px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+#addon-form .addon-label input[type=checkbox]:checked {
+  background-color: hsl(231, 100%, 99%);
+  border: none;
+}
+#addon-form .addon-label input[type=checkbox]:checked ~ .checkmark {
+  background-color: hsl(243, 100%, 62%);
+  border: none;
+}
+#addon-form .addon-label input[type=checkbox]:checked ~ .checkmark :after {
+  display: block;
+}
+#addon-form .addon-label:has(> input[type=checkbox]:checked) {
+  background-color: hsl(231, 100%, 99%);
+}
+#addon-form .addon-left {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 4.25rem;
+}
+#addon-form .addon-left .addon-description {
+  font-weight: 500;
+}
+#addon-form .addon-left .addon-details {
+  font-size: 0.875rem;
+  color: hsl(231, 11%, 63%);
+  margin-top: 0.5rem;
+}
+#addon-form .addon-price {
+  color: hsl(243, 100%, 62%);
+  font-size: 0.875rem;
+}
+#addon-form .button-footer {
+  margin-top: 5.25rem;
+}
+
+.summary-wrapper .summary-wrapper-top {
+  width: 28.125rem;
+  height: auto;
+  background-color: hsl(231, 100%, 99%);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2.1875rem;
+}
+.summary-wrapper .summary-plan {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid hsla(231, 11%, 63%, 0.2);
+}
+.summary-wrapper #change {
+  font-size: 0.875rem;
+  background: none;
+  border: none;
+  margin-top: 0.5rem;
+}
+.summary-wrapper #change a {
+  color: hsl(231, 11%, 63%);
+}
+.summary-wrapper #change a:hover {
+  color: hsl(243, 100%, 62%);
+  transition: 0.1s;
+}
+.summary-wrapper .summary-addon {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.summary-wrapper .summary-addon .summary-addon-wrapper {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: hsl(231, 11%, 63%);
+  display: flex;
+  justify-content: space-between;
+}
+.summary-wrapper .summary-addon .addon-price {
+  color: hsl(213, 96%, 18%);
+}
+.summary-wrapper .total-summary {
+  width: 100%;
+  padding: 1.5625rem 1.5rem 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.summary-wrapper .total {
+  color: hsl(231, 11%, 63%);
+  font-size: 0.875rem;
+}
+.summary-wrapper .total-price {
+  color: hsl(243, 100%, 62%);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+#confirm {
+  background-color: hsl(243, 100%, 62%);
+}
+#confirm:hover {
+  background-color: hsl(243, 100%, 77%);
+  transition: 0.1s;
+}
+
+.thank-you {
+  width: 28.125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.thank-you h1 {
+  margin-top: 2rem;
+}
+.thank-you p {
+  margin-top: 0.875rem;
+  color: hsl(231, 11%, 63%);
+  line-height: 1.5625rem;
+}
+
+.hidden {
+  display: none;
+}/*# sourceMappingURL=styles.css.map */
