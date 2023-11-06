@@ -5,8 +5,11 @@ export function Info() {
   const {
     register,
     handleSubmit,
+    getValues,
+    setValue,
     formState: { errors },
   } = useForm();
+
   const navigate = useNavigate();
   function onSubmit() {
     navigate("/plan");
@@ -42,15 +45,23 @@ export function Info() {
           <label htmlFor="email-input">
             <span>Email Address</span>
             <input
-              type="email"
+              type="email novalidate"
               id="email-input"
               placeholder="e.g. Stephen King@lorem.com"
+              onChange={() => setValue("email")}
               {...register("email", {
                 required: true,
+                pattern:
+                  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
               })}
             />
-            {errors.email && (
+
+            {!getValues("email") && errors?.email ? (
               <p className="error-message">This field is required</p>
+            ) : getValues("email") && errors?.email ? (
+              <p className="error-message">Invalid format</p>
+            ) : (
+              ""
             )}
           </label>
 
@@ -62,6 +73,7 @@ export function Info() {
               placeholder="e.g. +1 234 567 890"
               {...register("phoneNumber", {
                 required: true,
+                pattern: /^[0-9\b\+\-\(\)]+$/,
               })}
             />
             {errors.phoneNumber && (
